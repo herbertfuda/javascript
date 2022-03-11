@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora</title>
+    <style>
+        section{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: black;
+            color: white;
+            width: 203px;
+            padding: 10px;
+        }
+        #valor1, #valor2{
+            margin: 2px 0;
+            padding: 2px;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 16px;
+        }
+        .botao{
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            font-size: large;
+            width: 30px;
+            height: 30px;
+            margin-right: 5px;
+        }
+        #resultado{
+            font-size: 30px;
+            color: brown;
+            margin-left: 5px;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <h1>Calculadora</h1>
+        <p>Digite um número: <input type="number" name="valor1" id="valor1"></p>
+        <p>Digite outro número: <input type="number" name="valor2" id="valor2"></p>
+        <input type="button" value="+" title="Somar" class="botao" onclick="somar()">
+        <input type="button" value="-" title="Subtrair" class="botao" onclick="subtrair()">
+        <input type="button" value="x" title="Multiplicar" class="botao" onclick="multiplicar()">
+        <input type="button" value=":" title="Dividir" class="botao" onclick="dividir()">
+        <div>
+            <p>O resultado é: <span id="resultado"></span></p>
+        </div>
+    </section>
+    <script>
+        var n1 = window.document.querySelector('input#valor1')
+        var n2 = window.document.querySelector('input#valor2')
+        function somar(){
+            var resultado = window.document.querySelector('span#resultado')
+            var res = Number(n1.value) + Number(n2.value)
+            resultado.innerHTML = ` <strong>${res}</strong>`
+        }
+        function subtrair(){
+            var resultado = window.document.querySelector('span#resultado')
+            var res = Number(n1.value) - Number(n2.value)
+            resultado.innerHTML = ` <strong>${res}</strong>`
+        }
+        function multiplicar(){
+            var resultado = window.document.querySelector('span#resultado')
+            var res = Number(n1.value) * Number(n2.value)
+            resultado.innerHTML = ` <strong>${res}</strong>`
+        }
+        function dividir(){
+            var resultado = window.document.querySelector('span#resultado')
+            var res = Number(n1.value) / Number(n2.value)
+            resultado.innerHTML = ` <strong>${res}</strong>`
+        }
+        </script>
+</body>
+</html>
