@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href='javascript:
+var e = "", r = ""; /* Expressão a avaliar e o resultado */
+do {
+/* Exibe a expressão e o resultado e pede uma nova expressão */
+e = prompt("Expression: " + e + "\n" + r + "\n", e);
+try { r = "Result: " + eval(e); } /* Tenta avaliar a expressão */
+catch(ex) { r = ex; } /* Ou lembra do erro */
+} while(e); /* Continua até que nenhuma expressão seja inserida ou que seja clicado
+Cancel */
+void 0; /* Isso impede que o documento corrente seja sobrescrito */
+'>JavaScript Evaluator</a>
+</body>
+</html>
