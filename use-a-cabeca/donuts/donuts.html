@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja de Donuts</title>
+    <style>
+        form{
+            background-color: aqua;
+            width: 320px;
+        }
+        label{
+            display: inline-block;
+            margin: 5px 0;
+        }
+        input{
+            float: right;
+        }
+    </style>
+    <script>
+        function updateorder(){
+            const IMPOSTOS = 0.0925
+            const PRECO = 0.5
+            var chocolate = parseInt(document.getElementById('qtdechocolate').value)
+            var caramelo = parseInt(document.getElementById('qtdecaramelo').value)
+            if(isNaN(chocolate))
+                chocolate=0
+            if(isNaN(caramelo))
+                caramelo=0
+            var subtotal = (chocolate + caramelo) * PRECO
+            document.getElementById('subtotal').value = subtotal.toFixed(2)
+            var taxa = subtotal * IMPOSTOS
+            document.getElementById('impostos').value = taxa.toFixed(2)
+            var total = subtotal + taxa
+            document.getElementById('total').value = total.toFixed(2)
+        }
+    </script>
+</head>
+<body>
+    <h1>Loja de Donuts</h1>
+    <p>Todos os donuts por R$0,50, chocolate ou caramelo</p>
+    <form action="">
+        <label for="name">Nome</label>
+        <input type="text" id="name" name="name"><br>
+        <label for="chocolate">Qtde chocolate</label>
+        <input type="number" name="qtdechocolate" id="qtdechocolate" onchange="updateorder()" min="0"><br>
+        <label for="caramelo">Qtde caramelo</label>
+        <input type="number" name="qtdecaramelo" id="qtdecaramelo" onchange="updateorder()" min="0"><br>
+        <label for="tempo">Minutos para retirada</label>
+        <input type="number" name="time" id="time"><br>
+        <label for="subtotal">Subtotal</label>
+        <input type="number" name="subtotal" id="subtotal" disabled><br>
+        <label for="impostos">Impostos</label>
+        <input type="number" name="impostos" id="impostos" disabled><br>
+        <label for="total">Total</label>
+        <input type="number" name="total" id="total" disabled>
+    </form>
+</body>
+</html>
